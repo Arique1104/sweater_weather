@@ -1,6 +1,5 @@
 class AuthorizeApiRequest
   prepend SimpleCommand
- # attr_reader
   def initialize(headers = {})
     @headers = headers
   end
