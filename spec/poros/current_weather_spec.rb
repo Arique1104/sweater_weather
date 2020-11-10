@@ -28,11 +28,13 @@ RSpec.describe CurrentWeather do
      :rain=>{:"1h"=>1.09},
      :snow=>{:"1h"=>1.0914}}
 
+
+
+
      current = CurrentWeather.new(data)
-     expect(current.datetime).to eq("2020-11-09 19:41:23 -0600")
+     expect(current.datetime).to eq("2020-11-09 19:37:20 -0600")
      expect(current.sunrise).to eq("2020-11-09 07:38:21 -0600")
      expect(current.sunset).to eq("2020-11-09 17:49:21 -0600")
-     expect(current.temperature).to eq("2020-11-09 17:49:21 -0600")
      expect(current.temperature).to eq(27.63)
      expect(current.feels_like).to eq(19.94)
      expect(current.humidity).to eq(92)
@@ -41,4 +43,10 @@ RSpec.describe CurrentWeather do
      expect(current.conditions).to eq('moderate rain')
      expect(current.icon).to eq('10n')
   end
+
+  # it '#format_date_time' do
+  #   time = 1604972240
+  #   formatted_time = format_datetime(time)
+  #   expect(formatted_time).to eq("sdfsdf")
+  # end
 end

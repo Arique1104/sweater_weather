@@ -21,8 +21,8 @@ RSpec.describe DailyWeather do
       daily = DailyWeather.new(data)
 
       expect(daily.date).to eq("2020-11-09")
-      expect(daily.sunrise).to eq("2020-11-09 07:38:21.000000000 -0600")
-      expect(daily.sunset).to eq("2020-11-09 17:49:21.000000000 -0600")
+      expect(daily.sunrise).to eq("2020-11-09 07:38:21 -0600")
+      expect(daily.sunset).to eq("2020-11-09 17:49:21 -0600")
       expect(daily.max_temp).to eq(45.77)
       expect(daily.min_temp).to eq(27.73)
       expect(daily.conditions).to eq("broken clouds")
