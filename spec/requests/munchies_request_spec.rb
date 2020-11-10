@@ -16,10 +16,10 @@ describe 'Munchies Request' do
 
     attributes = munchies[:data][:attributes]
     expect(attributes).to have_key(:destination_city)
-    expect(attributes[:destination_city]).to eq("Pueblo Co")
+    expect(attributes[:destination_city]).to eq("Pueblo, CO")
 
     expect(attributes).to have_key(:travel_time)
-    expect(attributes[:travel_time]).to eq("1 hours 48 min")
+    expect(attributes[:travel_time]).to eq("1 hours 43 min")
 
     expect(attributes).to have_key(:forecast)
     expect(attributes[:forecast]).to be_a(Hash)
@@ -27,7 +27,7 @@ describe 'Munchies Request' do
     expect(forecast).to have_key(:summary)
     expect(forecast[:summary]).to be_a(String)
     expect(forecast).to have_key(:temperature)
-    expect(forecast[:temperature]).to be_a(String)
+    expect(forecast[:temperature]).to be_a(Integer)
 
     expect(attributes).to have_key(:restaurant)
     expect(attributes[:restaurant]).to be_a(Hash)

@@ -32,4 +32,6 @@ class Forecast
     results[0..7]
   end
 
+
+
 end
