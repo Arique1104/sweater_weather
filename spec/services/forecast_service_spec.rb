@@ -60,6 +60,7 @@ describe ForecastService do
            :displayLatLng=>{:lat=>39.738453, :lng=>-104.984853},
            :mapUrl=>
             "http://www.mapquestapi.com/staticmap/v5/map?key=2ogQPvpPEsgwUbYGme7Sv8j01RduKHrb&type=map&size=225,160&locations=39.738453,-104.984853|marker-sm-50318A-2&scalebar=true&zoom=9&rand=-1619822870"}]}]}
+
       long_lat = LongLat.new(data)
       results = ForecastService.find_forecast(long_lat)
 
