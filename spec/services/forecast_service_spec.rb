@@ -66,7 +66,7 @@ describe ForecastService do
 
       expect(results).to have_key(:current)
       expect(results[:current].class).to eq(Hash)
-      expect(results[:current].count).to eq(15)
+      expect(results[:current].count).to eq(14)
 
 
       expect(results).to have_key(:hourly)
