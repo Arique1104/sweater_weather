@@ -6,6 +6,7 @@ class HourlyWeather
               :direction,
               :conditions,
               :icon
+              
   def initialize(data)
     @time = format_time(data[:dt])
     @wind_speed = "#{data[:wind_speed]} mph"
