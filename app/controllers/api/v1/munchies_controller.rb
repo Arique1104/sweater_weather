@@ -1,11 +1,10 @@
 class Api::V1::MunchiesController < ApplicationController
 
   def on_arrival
-    
-    require "pry"; binding.pry
+    @response = MunchiesFacade.find_restaurant(strong_params)
 
 
-
+    render json: MunchieSerializer.new(@response)
   end
 
   private
