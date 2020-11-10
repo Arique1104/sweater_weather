@@ -21,8 +21,22 @@ describe 'Munchies Request' do
     expect(attributes).to have_key(:travel_time)
     expect(attributes[:travel_time]).to eq("1 hours 48 min")
 
-    expect(attributes).to have_key(:travel_time)
-    expect(attributes[:travel_time]).to eq("1 hours 48 min")
+    expect(attributes).to have_key(:forecast)
+    expect(attributes[:forecast]).to be_a(Hash)
+    forecast = attributes[:forecast]
+    expect(forecast).to have_key(:summary)
+    expect(forecast[:summary]).to be_a(String)
+    expect(forecast).to have_key(:temperature)
+    expect(forecast[:temperature]).to be_a(String)
+
+    expect(attributes).to have_key(:restaurant)
+    expect(attributes[:restaurant]).to be_a(Hash)
+    restaurant = attributes[:restaurant]
+    expect(restaurant).to have_key(:name)
+    expect(restaurant[:name]).to be_a(String)
+    expect(restaurant).to have_key(:address)
+    expect(restaurant[:address]).to be_a(String)
+
 
   end
 end
