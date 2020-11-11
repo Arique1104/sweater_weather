@@ -4,7 +4,7 @@ namespace :api do
   namespace :v1 do
     get '/forecast', to: 'weather#current'
     get '/backgrounds', to: 'weather#image'
+    post '/users', to: 'users#create'
   end
 end
 end
- 
