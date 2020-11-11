@@ -5,6 +5,11 @@
     render json: ForecastSerializer.new(@results)
   end
 
+  def image
+    @image = ImageFacade.find_image(strong_params[:location])
+    render json: ImageSerializer.new(@image)
+  end
+
 
 private
 
