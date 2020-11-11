@@ -7,7 +7,14 @@ describe 'Login' do
       password_confirmation: 'password'
     }
 
-    post '/api/v1/users', params: request_params
+    headers = {
+      'CONTENT_TYPE': 'application/json',
+      'ACCEPT': 'application/json'
+    }
+
+    post '/api/v1/users', headers: headers, params: JSON.generate(request_params)
+
+
     expect(response).to be_successful
 
     user = JSON.parse(response.body, symbolize_names: true)
