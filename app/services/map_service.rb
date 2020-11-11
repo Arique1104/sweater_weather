@@ -5,7 +5,7 @@ class MapService
       f.params[:key] = ENV['MAP_QUEST_KEY']
     end
   end
-  
+
   def self.find_long_lat(location)
     response = conn.get("/geocoding/v1/address") do |f|
       f.params[:location] = location
