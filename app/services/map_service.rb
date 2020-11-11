@@ -13,5 +13,11 @@ class MapService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-
+  def self.find_distance(latlng, initial_location)
+    response = conn.get("/directions/v2/routematrix") do |f|
+      f.params[:from] = initial_location
+      f.params[:to] = latlng
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
