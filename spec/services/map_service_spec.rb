@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe MapService do
   context 'class methods' do
-    it 'returns data to process into longitude and latitude' do
+    it 'find_long_lat' do
       data = 'chicago,il'
       map_service = MapService.find_long_lat(data)
 
@@ -31,6 +31,32 @@ describe MapService do
 
       expect(result).to have_key(:locations)
       expect(result[:locations]).to be_a(Array)
+    end
+
+    it 'find_distance' do
+      latlng = "36.4632,-82.1808"
+      initial_location = "erwin, tn"
+      distance_response = MapService.find_distance(latlng, initial_location)
+
+      expect(distance_response).to be_a(Hash)
+      expect(distance_response).to have_key(:allToAll)
+      expect(distance_response[:allToAll]).to eq(false).or eq(true)
+
+      expect(distance_response).to have_key(:distance)
+      expect(distance_response[:distance]).to be_an(Array)
+
+      expect(distance_response).to have_key(:locations)
+      expect(distance_response[:locations]).to be_an(Array)
+
+      expect(distance_response).to have_key(:time)
+      expect(distance_response[:time]).to be_an(Array)
+
+      expect(distance_response).to have_key(:manyToOne)
+      expect(distance_response[:manyToOne]).to eq(false).or eq(true)
+
+      expect(distance_response).to have_key(:info)
+      expect(distance_response[:info]).to be_an(Hash)
+
     end
   end
 end
