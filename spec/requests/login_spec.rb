@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe 'Login' do
   it 'can login' do
+    User.create!(email: 'whatever@example.com', password: 'password', password_confirmation: 'password')
+
     request_params = {
       email: 'whatever@example.com',
       password: 'password'
