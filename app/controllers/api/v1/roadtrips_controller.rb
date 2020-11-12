@@ -5,7 +5,7 @@ class Api::V1::RoadtripsController < ApplicationController
       roadtrip = RoadtripFacade.create(strong_params[:origin], strong_params[:destination])
       render json: RoadtripSerializer.new(roadtrip)
     else
-      render body: {}, status: 400
+      render body: {}, status: 401
     end
   end
 

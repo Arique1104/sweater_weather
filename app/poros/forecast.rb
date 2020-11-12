@@ -4,10 +4,10 @@ class Forecast
              :hourly_weather,
              :id
 
-  def initialize(data)
+  def initialize(data, hours_needed = 7)
     @current_weather = current(data[:current])
     @daily_weather = daily(data[:daily])
-    @hourly_weather = hourly(data[:hourly])
+    @hourly_weather = hourly(data[:hourly])[0..hours_needed]
   end
 
 
@@ -29,7 +29,7 @@ class Forecast
     data.each do |d|
       results << HourlyWeather.new(d)
     end
-    results[0..7]
+    results
   end
 
 end
