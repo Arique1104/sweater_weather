@@ -42,4 +42,20 @@ describe 'Login' do
     expect(attributes).to have_key(:api_key)
     expect(attributes[:api_key]).to be_a(String)
   end
+  it 'can deny access' do
+    User.create!(email: 'whatever@example.com', password: 'password', password_confirmation: 'password')
+
+    request_params = {
+      email: 'whatever@example.com',
+      password: 'wrong_password'
+    }
+    headers = {
+      'CONTENT_TYPE': 'application/json',
+      'ACCEPT': 'application/json'
+    }
+
+    post '/api/v1/sessions', headers: headers, params: JSON.generate(request_params)
+
+    expect(response.status).to eq(400)
+  end
 end
