@@ -29,7 +29,7 @@ describe 'Weather for City' do
     expect(current[:temperature]).to be_a(Float)
 
     expect(current).to have_key(:feels_like)
-    expect(current[:feels_like]).to be_a(Float)
+    expect(current[:feels_like]).to be_a(Float).or be_an(Integer)
 
     expect(current).to have_key(:humidity)
     expect(current[:humidity]).to be_a(Integer).or be_a(Float)
