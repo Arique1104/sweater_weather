@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe 'Login' do
+describe 'Registration' do
   it 'can send a user info and get an api key' do
     request_params = {
       email: 'whatever@example.com',
@@ -16,7 +16,7 @@ describe 'Login' do
 
 
     expect(response).to be_successful
-
+    expect(response.status).to eq(201)
     user = JSON.parse(response.body, symbolize_names: true)
 
     expect(user).to be_a(Hash)
