@@ -5,6 +5,7 @@ namespace :api do
     get '/forecast', to: 'weather#current'
     get '/backgrounds', to: 'weather#image'
     post '/users', to: 'users#create'
+    post '/sessions', to: 'sessions#create'
   end
 end
 end
