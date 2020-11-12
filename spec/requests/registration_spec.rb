@@ -1,6 +1,6 @@
 require 'rails_helper'
 describe 'Registration' do
-  it 'can send a user info and get an api key' do
+  it 'create a user' do
     request_params = {
       email: 'whatever@example.com',
       password: 'password',
@@ -39,5 +39,18 @@ describe 'Registration' do
 
     expect(attributes).to have_key(:api_key)
     expect(attributes[:api_key]).to be_a(String)
+  end
+  it 'can return an unsuccessful request' do
+    request_params = {
+      email: 'uh_hu@example.com'
+    }
+
+    headers = {
+      'CONTENT_TYPE': 'application/json',
+      'ACCEPT': 'application/json'
+    }
+
+    post '/api/v1/users', headers: headers, params: JSON.generate(request_params)
+    expect(response.status).to eq(400)
   end
 end
