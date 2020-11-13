@@ -6,11 +6,11 @@ You are a back-end developer working on a team that is building an application t
 Your team is working in a service-oriented architecture. The front-end will communicate with your back-end through an API. Your job is to expose that API that satisfies the front-end team’s requirements.
 
 ## Learning Goals
-Expose an API that aggregates data from multiple external APIs
-Expose an API that requires an authentication token
-Expose an API for CRUD functionality
-Determine completion criteria based on the needs of other developers
-Research, select, and consume an API based on your needs as a developer
+- Expose an API that aggregates data from multiple external APIs
+- Expose an API that requires an authentication token
+- Expose an API for CRUD functionality
+- Determine completion criteria based on the needs of other developers
+- Research, select, and consume an API based on your needs as a developer
 
 
 ## Exposed API Endpoints
@@ -18,16 +18,16 @@ Getting started
   - fork and clone this repo to your local.
   - run `bundle install` in your terminal
   - run `rails db:{create,migrate}`
-  - bundle exec figaro install (this creates your application.yml file where you can store your API Keys)
+  - run `bundle exec figaro install` (this creates your application.yml file where you can store your API Keys)
   - You'll need to request an api key from the following services:
       - [Mapquest API Geocoding AND Directions](https://developer.mapquest.com/)
       - [Pexel Images API](https://www.pexels.com/api/)
       - [Open Weather API](https://openweathermap.org/api)
 - Keep your api secret!
       - By adding your api key to your `application.yml` file you can limit exposing your keys!
-      `MAP_QUEST_KEY: <<YOUR KEY>>`
-      `OPEN_WEATHER_KEY: <<YOUR KEY>>`
-      `PEXEL_API: <<YOUR KEY>>`
+        - `MAP_QUEST_KEY: <<YOUR KEY>>`
+        - `OPEN_WEATHER_KEY: <<YOUR KEY>>`
+        - `PEXEL_API: <<YOUR KEY>>`
 
 ### Retrieve weather for a city Endpoint
 
