@@ -11,6 +11,6 @@ class Api::V1::RoadtripsController < ApplicationController
 
   private
   def strong_params
-    params.require(:roadtrip).permit(:origin, :destination, :api_key)
+    params.permit(:origin, :destination, :api_key)
   end
 end
