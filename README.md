@@ -23,7 +23,11 @@ Getting started
       - [Mapquest API Geocoding AND Directions](https://developer.mapquest.com/)
       - [Pexel Images API](https://www.pexels.com/api/)
       - [Open Weather API](https://openweathermap.org/api)
-
+- Keep your api secret!
+      - By adding your api key to your `application.yml` file you can limit exposing your keys!
+      `MAP_QUEST_KEY: <<YOUR KEY>>`
+      `OPEN_WEATHER_KEY: <<YOUR KEY>>`
+      `PEXEL_API: <<YOUR KEY>>`
 
 ### Retrieve weather for a city Endpoint
 
