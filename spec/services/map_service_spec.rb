@@ -54,7 +54,6 @@ describe MapService do
 
       expect(route).to have_key(:routeError)
       expect(route[:routeError]).to be_an(Hash)
-
     end
   end
 end
