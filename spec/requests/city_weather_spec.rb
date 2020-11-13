@@ -26,7 +26,7 @@ describe 'Weather for City' do
     expect(current[:sunset]).to be_a(String)
 
     expect(current).to have_key(:temperature)
-    expect(current[:temperature]).to be_a(Float)
+    expect(current[:temperature]).to be_a(Float).or be_an(Integer)
 
     expect(current).to have_key(:feels_like)
     expect(current[:feels_like]).to be_a(Float).or be_an(Integer)
