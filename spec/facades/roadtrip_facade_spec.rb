@@ -97,19 +97,6 @@ describe RoadtripFacade do
     end
     it 'calculate_time' do
     end
-    it 'format_weather' do
-      origin = "Denver,CO"
-      destination = "Pueblo,CO"
-      RoadtripFacade.create(origin, destination)
-
-      RoadtripFacade.lat_long_search
-
-      RoadtripFacade.format_lat_long
-
-      found_forecast = RoadtripFacade.find_weather_conditions
-
-      result = RoadtripFacade.format_weather(found_forecast)
-    end
     it 'lat_long_search' do
       origin = "Denver,CO"
       destination = "Pueblo,CO"
