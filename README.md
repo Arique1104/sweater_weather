@@ -32,11 +32,11 @@ Getting started
 ### Retrieve weather for a city Endpoint
 
 REQUEST
-    ```
-    GET /api/v1/forecast?location=denver,co
-    Content-Type: application/json
-    Accept: application/json
-    ```
+```
+GET /api/v1/forecast?location=denver,co
+Content-Type: application/json
+Accept: application/json
+```
 RESPONSE
 
 ```ruby
@@ -74,11 +74,11 @@ RESPONSE
 ### Retrieve background image for the city Endpoint
 
 REQUEST
-    ```
+```
 GET /api/v1/backgrounds?location=denver,co
 Content-Type: application/json
 Accept: application/json
-    ```
+```
 RESPONSE
 
 ```ruby
@@ -107,7 +107,7 @@ body:
 ### User Registration Endpoint
 
 REQUEST
-    ```
+```
 POST /api/v1/users
 Content-Type: application/json
 Accept: application/json
@@ -117,7 +117,7 @@ Accept: application/json
   "password": "password",
   "password_confirmation": "password"
 }
-    ```
+```
 RESPONSE
 
 ```ruby
@@ -140,7 +140,7 @@ body:
 ### Login Endpoint
 
 REQUEST
-    ```
+```
 POST /api/v1/sessions
 Content-Type: application/json
 Accept: application/json
@@ -149,7 +149,7 @@ Accept: application/json
   "email": "whatever@example.com",
   "password": "password"
 }
-    ```
+```
 RESPONSE
 
 ```ruby
@@ -172,7 +172,7 @@ body:
 ### Roadtrip Endpoint
 
 REQUEST
-    ```
+```
 POST /api/v1/road_trip
 Content-Type: application/json
 Accept: application/json
@@ -184,7 +184,7 @@ body:
   "destination": "Pueblo,CO",
   "api_key": "jgn983hy48thw9begh98h4539h4"
 }
-    ```
+```
 RESPONSE
 
 ```ruby
